@@ -1,5 +1,6 @@
 import ButtonContainer from "@/components/container/button-container";
 import { CardContainer } from "@/components/container/card-container";
+import { DropdownMenuContainer } from "@/components/container/dropdown-menu-container";
 import { FormContainer } from "@/components/container/form-container";
 
 function Heading({ text }: { text: string }) {
@@ -24,6 +25,12 @@ export default function Home() {
         <Heading text="Form" />
         <div className="flex gap-4">
           <FormContainer />
+        </div>
+      </div>
+      <div className="flex flex-col gap-4">
+        <Heading text="Dropdown Menu" />
+        <div className="flex gap-4">
+          <DropdownMenuContainer />
         </div>
       </div>
     </main>
