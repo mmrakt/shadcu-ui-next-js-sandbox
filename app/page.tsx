@@ -1,41 +1,30 @@
-import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@radix-ui/react-accordion";
-import { Loader2, Mail } from "lucide-react";
-import Link from "next/link";
+import ButtonContainer from "@/components/container/button-container";
+import { CardContainer } from "@/components/container/card-container";
+import { FormContainer } from "@/components/container/form-container";
 
+function Heading({ text }: { text: string }) {
+  return <h2 className="text-3xl font-bold">{text}</h2>;
+}
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="flex gap-4">
-        <Button>Button</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="link">Link</Button>
-        <Button>
-          <Mail className="mr-2 h-4 w-4" /> Login with Email
-        </Button>
-        <Button disabled>
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Please wait
-        </Button>
-        <Button asChild>
-          <Link href="/login">Login</Link>
-        </Button>
+    <main className="flex min-h-screen flex-col items-center gap-10 p-24">
+      <div className="flex flex-col gap-4">
+        <Heading text="Button" />
+        <div className="flex gap-4">
+          <ButtonContainer />
+        </div>
       </div>
-      <div className="">
-        {/* react__WEBPACK_IMPORTED_MODULE_0__.createContext) is not a function */}
-        {/* <Accordion type="single" collapsible>
-          <AccordionItem value="item-1">
-            <AccordionTrigger>Is it accessible?</AccordionTrigger>
-            <AccordionContent>
-              Yes. It adheres to the WAI-ARIA design pattern.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion> */}
+      <div className="flex flex-col gap-4">
+        <Heading text="Card" />
+        <div className="flex gap-4">
+          <CardContainer />
+        </div>
+      </div>
+      <div className="flex flex-col gap-4">
+        <Heading text="Form" />
+        <div className="flex gap-4">
+          <FormContainer />
+        </div>
       </div>
     </main>
   );
